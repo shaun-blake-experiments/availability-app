@@ -1,0 +1,81 @@
+html {
+	height: 100%;
+	overflow-y: scroll;
+}
+
+/* ng-show/ng-hide animations */
+.fade-animate {
+	-webkit-transition:0.5s linear all;
+	transition:0.5s linear all;
+	opacity:1;
+}
+
+.fade-animate.ng-hide {
+	opacity:0;
+}
+
+.fade-animate.ng-hide-add, .fade-animate.ng-hide-remove {
+	/* this needs to be here to make it visible during the animation
+	 since the .ng-hide class is already on the element rendering
+	 it as hidden. */
+	display:block!important;
+}
+
+.status-label {
+	float:right;
+	margin-right:20px;
+	margin-top:10px;
+	clear:both;
+}
+.spinner {
+	clear:none;
+}
+
+.big-round-button-container {
+	position:relative;
+	width:100%;
+	padding-bottom:100%;
+}
+
+.big-round-button {
+	left:0;
+	font-size:3vw;
+	position:absolute;
+	width:100%;
+	height:100%;
+	border-radius:100%;
+}
+
+@media screen and (min-width: 1600px) {
+	.big-round-button {
+		font-size:7vw;
+	}
+}
+
+@media screen and (min-width: 1150px) {
+	.big-round-button {
+		font-size:6vw;
+	}
+}
+
+@media screen and (min-width: 800px) {
+	.big-round-button {
+		font-size:5vw;
+	}
+}
+
+@media screen and (min-width: 650px) {
+	.big-round-button {
+		font-size:4vw;
+	}
+}
+
+@media screen and (min-width: 450px) {
+	.big-round-button {
+		font-size:3vw;
+	}
+}
+
+.big-round-button:focus, .big-round-button:active {
+	outline: 0;
+}

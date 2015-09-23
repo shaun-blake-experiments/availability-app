@@ -1,0 +1,27 @@
+<h1 class="page-header" style="margin:10px 0 20px;"><i class="fa fa-user fa-lg"></i> Set your Availability</h1>
+<div class="row placeholders">
+	<div class="col-xs-4 col-4 placeholder">
+		<div class="big-round-button-container">
+			<button type="button" class="btn btn-success big-round-button" ng-click="changeAvailability(AVAILABILITY.AVAILABLE)">
+				<i class="fa fa-user fa-lg"></i>
+				Available
+			</button>
+		</div>
+	</div>
+	<div class="col-xs-4 col-4 placeholder">
+		<div class="big-round-button-container">
+			<button type="button" class="btn btn-danger big-round-button" ng-click="changeAvailability(AVAILABILITY.BUSY)">
+				<i class="fa fa-minus-circle fa-lg"></i>
+				Busy
+			</button>
+		</div>
+	</div>
+	<div class="col-xs-4 col-4 placeholder">
+		<div class="big-round-button-container">
+			<button type="button" class="btn big-round-button" ng-click="changeAvailability(AVAILABILITY.AWAY)">
+				<i class="fa fa-sign-out fa-lg"></i>
+				Away
+			</button>
+		</div>
+	</div>
+</div>

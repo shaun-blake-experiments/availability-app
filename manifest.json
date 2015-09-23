@@ -1,0 +1,17 @@
+{
+  "manifest_version": 2,
+  "name": "Availability",
+  "version": "1",
+  "app": {
+    "background": {
+      "scripts": ["js/main.js", "js/third-party/angular.min.js"],
+      "persistent": false
+    }
+  },
+  "permissions": ["identity", "storage", "https://android.googleapis.com/", {"socket":["tcp-connect", "tcp-listen"]}],
+  "icons": { "256": "images/user.png" },
+  "sockets": {
+    "tcp": { "connect" : "" },
+    "tcpServer" : { "tcpServer": { "listen" : ":2000" } }
+  }
+}

@@ -1,0 +1,58 @@
+<!doctype html>
+<html ng-app="availabilityApp" ng-csp>
+<head>
+	<script src="js/third-party/angular.min.js"></script>
+	<script src="js/third-party/angular-resource.min.js"></script>
+	<script src="js/third-party/angular-animate.min.js"></script>
+	<script src="js/third-party/angular-route.min.js"></script>
+	<script src="js/third-party/jquery-2.1.0.min.js"></script>
+	<script src="js/third-party/bootstrap.min.js"></script>
+	<script src="js/app.js"></script>
+	<script src="js/controller.js"></script>
+	<script src="js/service.js"></script>
+	
+	<link href="css/third-party/bootstrap.min.css" rel="stylesheet">
+	<link href="css/third-party/angular-csp.css" rel="stylesheet">
+	<link href="css/third-party/dashboard.css" rel="stylesheet">
+	<link href="css/third-party/font-awesome.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="css/hue-app.css">
+</head>
+<body ng-controller="AvailabilityCtrl">
+	<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href ng-click="showPage('status')"><i class="fa fa-user fa-lg"></i> Availability</a></li></a>
+			</div>
+			<div class="navbar-collapse collapse">
+				<ul class="nav navbar-nav navbar-right">
+					<li><a ng-click="showPage('status')"><i class="fa fa-user fa-lg"></i> Availability</a></li>
+					<li><a ng-click="showPage('settings')"><i class="fa fa-lightbulb-o fa-lg"></i> Hue Settings</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="container-fluid" style="padding-top:1em;" ng-show="notifications.length > 0">
+		<div class="panel panel-default" style="text-align:right; display:inline-block; width:100%; padding:1em;">
+			<a href ng-click="notifications = [];">Clear <i class="fa fa-times fa-lg"></i></a>
+			<div id="errors" class="fade-animate alert alert-danger" ng-repeat="error in notifications" style="text-align:left;">
+				<button id="closeErrorsButton" ng-click="dismissNotification($index)" class="close">
+				<i class="fa fa-times fa-lg"></i></button>
+				<strong>{{error.shortError}} - </strong>{{error.longError}}
+			</div>
+		</div>
+	</div>
+	<p class="status-label" ng-show="status.hueState">
+		<span class = "label" ng-class="status.hueState.class">
+			<i class="fa fa-lightbulb-o fa-lg" ng-class="status.hueState.icon_class"></i>
+			{{status.hueState.label}}
+		</span>
+	</p>
+	<div class="container-fluid" ng-view style="margin-top:3em;">
+</body>
+</html>
